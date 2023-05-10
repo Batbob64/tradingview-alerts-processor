@@ -17,5 +17,6 @@ export const getTickerPrice = (
     case ExchangeId.FTX:
     default:
       return info.price;
+    case ExchangeId.Gate:
   }
 };

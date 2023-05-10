@@ -9,7 +9,7 @@ import { BinanceFuturesUSDMExchangeService } from '../../services/exchanges/bina
 import { BinanceSpotExchangeService } from '../../services/exchanges/binance.spot.exchange.service';
 import { BinanceUSSpotExchangeService } from '../../services/exchanges/binanceus.spot.exchange.service';
 import { FTXExchangeService } from '../../services/exchanges/ftx.exchange.service';
-import { GateExchangeService } from '../../services/exchanges'
+import { GateExchangeService } from '../../services/exchanges/gate.exchange.service';
 import { ExchangeService } from '../../types/exchanges.types';
 import { KuCoinExchangeService } from '../../services/exchanges/kucoin.exchange.service';
 import { isFTXSpot } from './ftx.utils';
