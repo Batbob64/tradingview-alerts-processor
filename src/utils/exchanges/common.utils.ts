@@ -9,6 +9,7 @@ import { BinanceFuturesUSDMExchangeService } from '../../services/exchanges/bina
 import { BinanceSpotExchangeService } from '../../services/exchanges/binance.spot.exchange.service';
 import { BinanceUSSpotExchangeService } from '../../services/exchanges/binanceus.spot.exchange.service';
 import { FTXExchangeService } from '../../services/exchanges/ftx.exchange.service';
+import { GateExchangeService } from '../../services/exchanges'
 import { ExchangeService } from '../../types/exchanges.types';
 import { KuCoinExchangeService } from '../../services/exchanges/kucoin.exchange.service';
 import { isFTXSpot } from './ftx.utils';
@@ -44,6 +45,8 @@ export const initExchangeService = (
       return new BinanceFuturesUSDMExchangeService();
     case ExchangeId.BinanceUS:
       return new BinanceUSSpotExchangeService();
+    case ExchangeId.Gate:
+      return new GateExchangeService();
     case ExchangeId.Kraken:
       return new KrakenExchangeService();
     case ExchangeId.KuCoin:

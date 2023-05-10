@@ -7,6 +7,7 @@ import {
 import { IBalance } from '../../interfaces/exchanges/common.exchange.interfaces';
 import { IFTXBalance } from '../../interfaces/exchanges/ftx.exchange.interfaces';
 import { IKuCoinBalance } from '../../interfaces/exchanges/kucoin.exchange.interfaces';
+import { IGateBalance } from '../../interfaces/exchanges/gate.exchange.interfaces';
 
 export const filterBalances = (
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
@@ -34,6 +35,14 @@ export const filterBalances = (
       return balances.info.assets
         .filter((b: IBinanceFuturesUSDBalance) => Number(b.availableBalance))
         .map((b: IBinanceFuturesUSDBalance) => ({
+          coin: b.asset,
+          free: b.availableBalance,
+          total: b.walletBalance
+        }));
+    case ExchangeId.Gate:
+      return balances.info.assets
+        .filter((b: IGateBalance) => Number(b.availableBalance))
+        .map((b: IGateBalance) => ({
           coin: b.asset,
           free: b.availableBalance,
           total: b.walletBalance
