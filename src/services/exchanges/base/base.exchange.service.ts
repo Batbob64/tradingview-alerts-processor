@@ -152,7 +152,7 @@ export abstract class BaseExchangeService {
       if (!instance) {
         instance = (await this.refreshSession(account)).exchange;
       }
-      const balances = await instance.fetch_balance();
+      const balances = await instance.fetchBalance();
       debug(BALANCES_READ_SUCCESS(this.exchangeId, accountId));
       return filterBalances(balances, this.exchangeId);
     } catch (err) {
