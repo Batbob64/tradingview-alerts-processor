@@ -29,9 +29,6 @@ export class Account {
   @IsString()
   @ValidateIf((account: Account) => account.exchange === ExchangeId.KuCoin)
   passphrase?: string;
-
-  @IsString()
-  @ValidateIf((account: Account) => account.exchange === ExchangeId.Gate)
 }
 
 export class AccountId {
